@@ -1,0 +1,25 @@
+{
+  "name": "swiftbar-zapier",
+  "version": "1.0.0",
+  "description": "Zapier Plugin for SwiftBar",
+  "main": "swiftbar-zapier.10s.js",
+  "scripts": {
+    "test": "node swiftbar-zapier.10s.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwernert/swiftbar-zapier.git"
+  },
+  "author": "Christian Wernert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwernert/swiftbar-zapier/issues"
+  },
+  "homepage": "https://github.com/cwernert/swiftbar-zapier#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.0.2",
+    "node-fetch": "^3.2.10",
+    "path": "^0.12.7"
+  }
+}
