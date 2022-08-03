@@ -19,7 +19,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "inquirer": "^9.0.2",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^2.6.7",
     "path": "^0.12.7"
   }
 }
