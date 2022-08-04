@@ -33,7 +33,7 @@ let update = {
 };
 
 //checking for updates
-const local = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const local = JSON.parse(fs.readFileSync(__dirname+'/package.json', 'utf8'));
 const ghpkg = "https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/package.json";
 fetch(ghpkg,{method:"GET"}).then(res => res.json()).then((github) => {
 	if(semver.lt(local.version,github.version)){
