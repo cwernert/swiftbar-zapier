@@ -79,7 +79,7 @@ if [[ $reqCount > 0 ]] ; then
   echo $required
   #ask user if they want to install
   while true; do
-    read -p "Do you want to install the required dependencies now? (y/n)"
+    read -p "Do you want to install the required dependencies now? (y/n)" yn
     case $yn in
       [yY] ) echo "Installing dependencies..."
               break;;
