@@ -103,9 +103,10 @@ echo "Creating config directory..."
 mkdir config
 cd config
 echo "Downloading swiftbar-zapier-config resources..."
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.sh
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.js
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.json
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-config.sh
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-config.js
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-config.json
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/package.json
 npm update
 cd ../
 chflags hidden * && chflags nohidden swiftbar-zapier.10s.js && chflags nohidden swiftbar-zapier-updater.1d.sh
