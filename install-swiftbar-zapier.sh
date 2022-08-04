@@ -42,14 +42,6 @@ else
     ((reqCount=reqCount+1))
   fi
 fi
-#checking xcode-select
-xcode-select -p 1>/dev/null;
-if [[ $? != 0 ]] ; then
-  required=$required" xcode-select"
-  ((reqCount=reqCount+1))
-else
-  installed=$installed" xcode-select"
-fi
 #checking Homebrew
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -74,9 +66,6 @@ if [[ $reqCount > 0 ]] ; then
       * ) echo "Invalid response. Please enter Y or N.";;
     esac
   done
-  if echo $required | grep -q 'xcode-select'; then
-    xcode-select --install
-  fi
   if echo $required | grep -q 'homebrew'; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     brew update
