@@ -30,4 +30,4 @@ chmod 755 swiftbar-zapier-config.js
 chmod 755 swiftbar-zapier-config.sh
 npm update
 cd ../
-chflags hidden * && chflags nohidden swiftbar-zapier.10s.js && chflags nohidden swiftbar-zapier-updater.1d.js
+chflags hidden * && chflags nohidden swiftbar-zapier.10s.js && chflags nohidden swiftbar-zapier-updater.1d.sh
