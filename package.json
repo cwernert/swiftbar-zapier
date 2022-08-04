@@ -11,14 +11,12 @@
     "url": "git+https://github.com/cwernert/swiftbar-zapier.git"
   },
   "author": "Christian Wernert",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/cwernert/swiftbar-zapier/issues"
   },
   "homepage": "https://github.com/cwernert/swiftbar-zapier#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "inquirer": "^8.0.0",
     "node-fetch": "^2.6.7",
     "path": "^0.12.7"
   }
