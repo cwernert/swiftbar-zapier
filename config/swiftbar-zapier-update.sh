@@ -9,7 +9,6 @@ cd config
 curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-update.sh
 curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-config.sh
 curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-config.js
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/swiftbar-zapier-config.json
 curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/config/package.json
 chmod 755 swiftbar-zapier-config.js
 chmod 755 swiftbar-zapier-config.sh
