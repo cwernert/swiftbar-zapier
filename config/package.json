@@ -1,0 +1,17 @@
+{
+  "name": "swiftbar-zapier-config",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Handles configuration for swiftbar-zapier",
+  "main": "swiftbar-zapier-config.js",
+  "scripts": {
+    "test": "swiftbar-zapier-config.js"
+  },
+  "author": "Christian Wernert",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.0.2",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
+}
