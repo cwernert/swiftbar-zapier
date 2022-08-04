@@ -108,7 +108,7 @@ curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar
 curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.json
 npm update
 cd ../
-chflags hidden * && chflags nohidden swiftbar-zapier.10s.js && chflags nohidden swiftbar-zapier-updater.1d.js
+chflags hidden * && chflags nohidden swiftbar-zapier.10s.js && chflags nohidden swiftbar-zapier-updater.1d.sh
 echo "Installation complete. Starting SwiftBar..."
 open -a SwiftBar
 echo "Done. You should now see swiftbar-zapier in your MacOS menu bar."
