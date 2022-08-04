@@ -3,14 +3,14 @@ clear
 echo "This script will install swiftbar-zapier on your computer."
 echo "If SwiftBar is currently running, it will be closed now and opened again once installation is complete."
 while true; do
-  read -p "Are you ready to continue? (y/n)"
-  case $yn in
-    [yY] ) echo "Installing swiftbar-zapier..."
-            break;;
-    [nN] ) echo "Exiting. Installation aborted."
-            exit;;
-    * ) echo "Invalid response. Please enter Y or N.";;
-  esac
+read -p "Are you ready to continue? (y/n)" yn
+case $yn in 
+  [yY] ) echo "Installing swiftbar-zapier...";
+    break;;
+  [nN] ) echo "Exiting. Installation aborted.";
+    exit;;
+  * ) echo "Invalid response. Please enter Y or N.";;
+esac
 done
 pkill -x SwiftBar
 echo "Creating swiftbar-zapier directory..."
