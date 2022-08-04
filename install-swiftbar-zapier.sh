@@ -13,20 +13,6 @@ case $yn in
 esac
 done
 pkill -x SwiftBar
-echo "Creating swiftbar-zapier directory..."
-mkdir -p ~/Applications/SwiftBar-Plugins/swiftbar-zapier
-cd ~/Applications/SwiftBar-Plugins/swiftbar-zapier
-echo "Downloading swiftbar-zapier resources..."
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier.10s.js
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-updater.1d.sh
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/package.json
-echo "Creating config directory..."
-mkdir config
-cd config
-echo "Downloading swiftbar-zapier-config resources..."
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.sh
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.js
-curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.json
 echo "Checking availability of dependencies..."
 installed="Installed:"
 required="Required:"
@@ -70,7 +56,7 @@ if [[ $? != 0 ]] ; then
   required=$required" homebrew"
   ((reqCount=reqCount+1))
 else
-	installed=$installed" homebrew"
+  installed=$installed" homebrew"
 fi
 #install dependencies if needed
 if [[ $reqCount > 0 ]] ; then
@@ -105,6 +91,24 @@ else
   echo "All dependencies are installed."
   echo $installed
 fi
+echo "Creating swiftbar-zapier directory..."
+mkdir -p ~/Applications/SwiftBar-Plugins/swiftbar-zapier
+cd ~/Applications/SwiftBar-Plugins/swiftbar-zapier
+echo "Downloading swiftbar-zapier resources..."
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier.10s.js
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-updater.1d.sh
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/package.json
+npm update
+echo "Creating config directory..."
+mkdir config
+cd config
+echo "Downloading swiftbar-zapier-config resources..."
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.sh
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.js
+curl -O https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/swiftbar-zapier-config.json
+npm update
+cd ../
+chflags hidden * && chflags nohidden swiftbar-zapier.10s.js && chflags nohidden swiftbar-zapier-updater.1d.js
 echo "Installation complete. Starting SwiftBar..."
 open -a SwiftBar
 echo "Done. You should now see swiftbar-zapier in your MacOS menu bar."
