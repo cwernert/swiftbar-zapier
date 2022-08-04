@@ -45,7 +45,7 @@ fetch(ghpkg,{method:"GET"}).then(res => res.json()).then((github) => {
 
 let output = "";
 if(update.available){
-	output = ":arrow_up: ";
+	output += ":arrow_up: ";
 }
 // set up config folder
 try{
@@ -61,7 +61,7 @@ try{
 		// config exists, read it
 		const config = JSON.parse(fs.readFileSync(configjson,'utf8'));
 		if(!config.channelids.length>0){
-			output = "Please add a Channel ID";
+			output += "Please add a Channel ID";
 		}else{
 			// call Storage for each of the Channel IDs to collect the data
 			fetchingData = true;
@@ -71,7 +71,7 @@ try{
 		//need to create config
 		fs.writeFile(configjson, JSON.stringify(defaultconfig), err => {
 			if(err){console.error(err);}
-			output = "Please add a Channel ID";
+			output += "Please add a Channel ID";
 		});
 	}
 }catch(error){
@@ -151,11 +151,14 @@ function readChannels(config){
 function presentOutputs(contents){
 	//loop through and present each channel title
 	for(let i=0;i<contents.length;i++){
+		let titleOutput = "SwiftBar Zapier";
 		if(contents[i].swiftbar_title.length>1){
-			console.log(contents[i].swiftbar_title);
-		}else{
-			console.log("SwiftBar Zapier");
+			titleOutput = contents[i].swiftbar_title;
 		}
+		if(update.available){
+			titleOutput = ":arrow_up: "+titleOutput;
+		}
+		console.log(titleOutput);
 	}
 	//output the divider to start the submenu content
 	console.log("---");
