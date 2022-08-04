@@ -4,7 +4,7 @@
 # <bitbar.version>v0.0.1</bitbar.version>
 # <bitbar.author>Christian Wernert</bitbar.author>
 # <bitbar.author.github>cwernert</bitbar.author.github>
-# <bitbar.dependencies>javascript, node (fetch, fs)</bitbar.dependencies>
+# <bitbar.dependencies>javascript, node (fetch, fs, semver)</bitbar.dependencies>
 # <bitbar.desc>Displays contents set by a Zapier channel</bitbar.desc>
 # <bitbar.abouturl>https://github.com/cwernert/swiftbar-zapier</bitbar.abouturl>
 # <swiftbar.hideAbout>false</swiftbar.hideAbout>
@@ -16,16 +16,37 @@
 
 const fetch = require('node-fetch');
 const fs = require('fs');
+const semver = require('semver');
 
 const configdir		= __dirname+"/config";
 const configjson	= configdir+"/swiftbar-zapier-config.json";
 const configbash	= configdir+"/swiftbar-zapier-config.sh";
 const configscript	= configdir+"/swiftbar-zapier-config.js";
+const configupdate	= configdir+"/swiftbar-zapier-update.sh";
 const defaultconfig = {"channelids":[]};
 
 let fetchingData = false; //this will be true if Swiftbar is calling the Storage API
+let update = {
+	"available":false,
+	"local":"",
+	"github":""
+};
+
+//checking for updates
+const local = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const ghpkg = "https://raw.githubusercontent.com/cwernert/swiftbar-zapier/main/package.json";
+fetch(ghpkg,{method:"GET"}).then(res => res.json()).then((github) => {
+	if(semver.lt(local.version,github.version)){
+		update.available = true;
+		update.local = local.version;
+		update.github = github.version;
+	}
+});
 
 let output = "";
+if(update.available){
+	output = ":arrow_up: ";
+}
 // set up config folder
 try{
 	if(!fs.existsSync(configdir)) {
@@ -70,10 +91,20 @@ try{
 }
 //if the plugin is not async calling for Storage data, it can output right now
 if(!fetchingData){
-	output+="\n---";
-	output+="\nAdd a new Channel ID | bash="+configbash+" param0=true param1=adding param3="+configscript;
-	output+="\nRemove a Channel ID | bash="+configbash+" param0=true param1=removing param3="+configscript;
+	output+=outputFooter();
 	console.log(output);
+}
+
+function outputFooter(){
+	let footer="\n---";
+	footer+="\nAdd a new Channel ID | bash="+configbash+" param0=true param1=adding param3="+configscript;
+	footer+="\nRemove a Channel ID | bash="+configbash+" param0=true param1=removing param3="+configscript;
+	footer+="\nRefresh | refresh=true";
+	if(update.available){
+		footer+="\n---";
+		footer+="\nUpdate available! Click here to update | bash="+configupdate+" param0="+process.env.SWIFTBAR_PLUGINS_PATH;
+	}
+	return footer;
 }
 
 function getData(id){
@@ -139,9 +170,7 @@ function presentOutputs(contents){
 		}
 		const x = i+1;
 		if(x==contents.length){
-			menuOutput+="\nAdd a new Channel ID | bash="+configbash+" param0=true param1=adding param3="+configscript;
-			menuOutput+="\nRemove a Channel ID | bash="+configbash+" param0=true param1=removing param3="+configscript;
-			menuOutput+="\nRefresh | refresh=true";
+			menuOutput+=outputFooter();
 		}
 	}
 	console.log(menuOutput);
