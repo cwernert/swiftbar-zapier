@@ -45,7 +45,7 @@ fetch(ghpkg,{method:"GET"}).then(res => res.json()).then((github) => {
 
 let output = "";
 if(update.available){
-	output += ":arrow_up: ";
+	output += "⬆️ ";
 }
 // set up config folder
 try{
@@ -102,7 +102,7 @@ function outputFooter(){
 	footer+="\nRefresh | refresh=true";
 	if(update.available){
 		footer+="\n---";
-		footer+="\nUpdate available! Click here to update | bash="+configupdate+" param0="+process.env.SWIFTBAR_PLUGINS_PATH;
+		footer+="\n⬆️ Update available! Click here to update | bash="+configupdate+" param0="+process.env.SWIFTBAR_PLUGINS_PATH;
 	}
 	return footer;
 }
@@ -156,7 +156,7 @@ function presentOutputs(contents){
 			titleOutput = contents[i].swiftbar_title;
 		}
 		if(update.available){
-			titleOutput = ":arrow_up: "+titleOutput;
+			titleOutput = "⬆️ "+titleOutput;
 		}
 		console.log(titleOutput);
 	}
