@@ -1,10 +1,10 @@
 #!/usr/bin/env /usr/local/bin/node
 /*
 # <bitbar.title>SwiftBar for Zapier</bitbar.title>
-# <bitbar.version>v0.0.1</bitbar.version>
+# <bitbar.version>v1.0.1</bitbar.version>
 # <bitbar.author>Christian Wernert</bitbar.author>
 # <bitbar.author.github>cwernert</bitbar.author.github>
-# <bitbar.dependencies>javascript, node (fetch, fs, semver)</bitbar.dependencies>
+# <bitbar.dependencies>node (fetch, fs, semver)</bitbar.dependencies>
 # <bitbar.desc>Displays contents set by a Zapier channel</bitbar.desc>
 # <bitbar.abouturl>https://github.com/cwernert/swiftbar-zapier</bitbar.abouturl>
 # <swiftbar.hideAbout>false</swiftbar.hideAbout>
