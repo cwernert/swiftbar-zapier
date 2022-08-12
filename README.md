@@ -1,6 +1,6 @@
 # swiftbar-zapier
 
-A plugin for [the SwiftBar app](https://swiftbar.app/), which presents content collected by Zapier.
+A plugin for [the SwiftBar app](https://swiftbar.app/), which presents content collected by [Zapier](https://zapier.com).
 
 1. [Installation](#installation)
 2. [Usage](#usage)
