@@ -33,6 +33,7 @@ If you would like to check what the script will do before running it, you can [r
 
 Once installed, you should see "Please add a Channel ID" in the MenuBar like this:
 !["Please add a Channel ID" shown in the MenuBar](https://cdn.zappy.app/918bc8b5cd7a8a8fd20cd0052a8a0da7.png)
+
 If not, see [troubleshooting](#troubleshooting).
 
 Now, you're ready to set up a "Channel", which will hold the information to be presented in swiftbar-zapier. To do this, you'll need:
