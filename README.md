@@ -31,7 +31,7 @@ If you would like to check what the script will do before running it, you can [r
 
 ## Usage:
 
-Once installed, you should see "Please add a Channel ID" in the MenuBar like this:
+Once installed, you should see "Please add a Channel ID" in the MenuBar [like this](https://cdn.zappy.app/918bc8b5cd7a8a8fd20cd0052a8a0da7.png):
 !["Please add a Channel ID" shown in the MenuBar](https://cdn.zappy.app/918bc8b5cd7a8a8fd20cd0052a8a0da7.png)
 
 If not, see [troubleshooting](#troubleshooting).
