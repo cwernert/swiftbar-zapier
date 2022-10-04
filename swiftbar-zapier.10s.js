@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/local/bin/node
+#!/usr/bin/env node
 /*
 # <bitbar.title>SwiftBar for Zapier</bitbar.title>
 # <bitbar.version>v1.0.1</bitbar.version>
