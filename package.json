@@ -1,6 +1,6 @@
 {
   "name": "swiftbar-zapier",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Zapier Plugin for SwiftBar",
   "main": "swiftbar-zapier.10s.js",
   "scripts": {
